@@ -6,6 +6,7 @@ This repository contains a collection of Bash scripts for personal use.
 
 - [scp-backup.sh](#scp-backupsh)
 - [docker-mongo-backup.sh](#docker-mongo-backupsh)
+- [clean-backups.sh](#clean-backupssh)
 
 ---
 
@@ -55,6 +56,29 @@ Creates a backup of a MongoDB database running in a Docker container. The backup
 
 **Log Output:**
 Backup files are stored in the specified script directory. Errors and status messages are printed to the console.
+
+---
+
+## 🧹 **clean-backups.sh**
+
+**Purpose:**
+Automatically manages backup file retention by keeping only the 3 most recent pairs of backup files and deleting older ones. Designed for paired backup files with date-prefixed naming conventions.
+
+**Features:**
+
+- Maintains exactly 3 most recent backup pairs
+- Works with paired files (e.g., btcMongo.tgz and planka.tgz)
+- Automatically sorts files by date to identify newest pairs
+- Safe deletion with file existence checks
+- Detailed logging of cleanup operations
+- Shows remaining files after cleanup
+
+**Configuration:**
+
+- Set `BACKUP_DIR` variable to your backup directory path
+- Script expects paired files with format: `YYYY-MMDD-HHMM-filename.tgz`
+- Backup pairs should follow consistent naming (e.g., btcMongo.tgz + planka.tgz)
+- Ensure the script has read/write permissions in the backup directory
 
 ---
 
