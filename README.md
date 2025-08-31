@@ -9,7 +9,7 @@ This repository contains a collection of Bash scripts for personal use.
 
 ---
 
-## 🚀 **scp-backup.sh**
+## 💻 **scp-backup.sh**
 
 **Purpose:**
 Automates the backup of specified files to a remote server using SCP. Logs all actions and errors to a local log file.
@@ -18,17 +18,19 @@ Automates the backup of specified files to a remote server using SCP. Logs all a
 
 - User-configurable source files and remote destination
 - Pattern matching for source files
+- Uses a specified SSH key for secure SCP connection
 - Logs all operations to `scp-backup.log`
 - Reports success or failure for each file
 
 **Configuration:**
 
 - SSH key pairing required between local and remote environment.
+- Set the `SSH_KEY` variable to the path of your private SSH key
 - Edit the `SRC_FILES` array to specify files or patterns to back up
 - Set `DEST_USER`, `DEST_HOST`, and `DEST_PATH` for your remote server
 
 **Log Output:**
-All actions are logged to `scp-backup.log` in the script directory.
+All actions are logged to `scp-backup.log` in the script directory. The script also prints the SSH key path and user information for each backup session.
 
 ---
 
