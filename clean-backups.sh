@@ -5,7 +5,7 @@
 # Each pair consists of btcMongo.tgz and planka.tgz files with the same date prefix
 
 # Set the backup directory (change this to your actual backup directory)
-BACKUP_DIR="/home/btro/autoBackups"
+BACKUP_DIR="/home/user/autoBackups"
 
 # Change to the backup directory
 cd "$BACKUP_DIR" || {
